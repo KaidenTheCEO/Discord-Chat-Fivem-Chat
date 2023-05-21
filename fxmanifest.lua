@@ -12,7 +12,8 @@ shared_script 'config/config.lua'
 
 -- Specify the server script entry point
 server_script {
-    'server/server.lua'
+    'server/server.lua',
+    'server/discord.lua'
 }
 
 

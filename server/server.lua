@@ -7,16 +7,6 @@ local function sendWebhookMessage(content, username)
     PerformHttpRequest(Config.webhookUrl, function(err, text, headers) end, 'POST', json.encode(payload), { ['Content-Type'] = 'application/json' })
 end
 
--- Log player deaths
-if Config.enableDeaths then
-    AddEventHandler("playerDied", function()
-        local player = source
-        local playerName = GetPlayerName(player)
-        local deathMessage = "A player died."
-        sendWebhookMessage(deathMessage, playerName)
-    end)
-end
-
 -- Log chat messages
 if Config.enableChat then
     AddEventHandler("chatMessage", function(source, name, message)
