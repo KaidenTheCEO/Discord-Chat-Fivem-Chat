@@ -27,3 +27,16 @@ AddEventHandler("rconCommand", function(commandName, args)
     local commandMessage = string.format("Command used: %s", commandName)
     sendWebhookMessage(commandMessage, playerName)
 end)
+
+-- Player joining server
+AddEventHandler("playerConnecting", function(playerName, setKickReason, deferrals)
+    local joinMessage = "**📥 Player joined the server: **" .. playerName
+    sendWebhookMessage(joinMessage, "Server")
+end)
+
+-- Player leaving server
+AddEventHandler("playerDropped", function(reason)
+    local playerName = GetPlayerName(source)
+    local leaveMessage = "**📤  Player left the server: **" .. playerName
+    sendWebhookMessage(leaveMessage, "Server")
+end)
