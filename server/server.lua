@@ -50,37 +50,3 @@ if Config.enableLeave then
         sendWebhookMessage(leaveMessage, "Server")
     end)
 end
-
-
-
--- Function to log staff actions to the webhook
-local function logStaffAction(action, target, staffMember)
-    local message = string.format("**Staff Action**: %s\n**Target**: %s\n**Staff Member**: %s", action, target, staffMember)
-    sendWebhookMessage(message, "Server")
-end
-
--- Log vMenu bans (Not Working?)
-if Config.enableVMenuBans then
-    RegisterServerEvent("vMenu:BanPlayer")
-    AddEventHandler("vMenu:BanPlayer", function(target, staffMember)
-        logStaffAction("Ban", target, staffMember)
-    end)
-end
-
--- Log vMenu kicks (Not Working?)
-if Config.enableVMenuKicks then
-    RegisterServerEvent("vMenu:KickPlayer")
-    AddEventHandler("vMenu:KickPlayer", function(target, staffMember)
-        logStaffAction("Kick", target, staffMember)
-    end)
-end
-
--- Log vMenu noclip (Not Working?)
-if Config.enableVMenuNoClip then
-    RegisterServerEvent("vMenu:ToggleNoClip")
-    AddEventHandler("vMenu:ToggleNoClip", function()
-        local playerName = GetPlayerName(source)
-        local message = string.format("**Noclip Activated**: %s", playerName)
-        sendWebhookMessage(message, "Server")
-    end)
-end

@@ -4,9 +4,6 @@ enableDeaths = false,
 enableChat = true,
 enableCommands = true,
 enableJoin = true,
-enableLeave = true,
-enableVMenuBans = true,
-enableVMenuKicks = true,
-enableVMenuNoClip = true
+enableLeave = true
 }
 return config
