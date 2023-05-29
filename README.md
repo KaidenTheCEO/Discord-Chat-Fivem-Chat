@@ -1,2 +1,5 @@
 # Discord-Chat-Fivem-Chat
-Discord Chat to Fivem Chat with Information too
+FiveM Discord integration script. 
+
+Pending: 
+Integrate Discord to FiveM.

@@ -1,0 +1,10 @@
+{
+    "botToken": "YOUR_DISCORD_BOT_TOKEN",
+    "guildId": "YOUR_DOSCORD_GUILD_Id",
+    "staffRoleIds": [
+      "ROLE_ID_1",
+      "ROLE_ID_2",
+      "ROLE_ID_3"
+    ]
+  }
+  
